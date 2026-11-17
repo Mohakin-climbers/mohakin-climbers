@@ -1,10 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useServerFn } from "@tanstack/react-start";
+import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { z } from "zod";
 import { img } from "@/lib/images";
-import { submitInquiry } from "@/lib/inquiry.functions";
 import { Layout, PageHero, meta } from "@/components/site";
 
 const interests = ["Mount Kenya trek", "Kilimanjaro expedition", "Rwenzori trek", "Aberdare hike", "Forest adventure", "Safari", "Custom expedition", "Corporate adventure", "Foundation partnership", "Something else"];
@@ -24,7 +23,6 @@ function Contact() {
       ? `I'd like to customize: ${trip}\nChanges I have in mind (number of days, dates, accommodation, extra parks or activities, budget):\n`
       : `I'm interested in: ${trip}\n`
     : "";
-  const send = useServerFn(submitInquiry);
   const [state, setState] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -33,9 +31,33 @@ function Contact() {
     const v = (k: string) => String(f.get(k) ?? "");
     setState("sending");
     try {
-      await send({ data: { full_name: v("full_name"), email: v("email"), phone: v("phone"), country: v("country"), interest: v("interest"), group_size: v("group_size"), preferred_dates: v("preferred_dates"), message: v("message") } });
+      const serviceId = import.meta.env["VITE_EMAILJS_SERVICE_ID"];
+      const templateId = import.meta.env["VITE_EMAILJS_TEMPLATE_ID"];
+      const publicKey = import.meta.env["VITE_EMAILJS_PUBLIC_KEY"];
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error("EmailJS is not configured");
+      }
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: v("full_name"),
+          from_email: v("email"),
+          reply_to: v("email"),
+          phone: v("phone"),
+          country: v("country"),
+          interest: v("interest"),
+          group_size: v("group_size"),
+          preferred_dates: v("preferred_dates"),
+          message: v("message"),
+        },
+        { publicKey },
+      );
       setState("sent");
-    } catch {
+    } catch (error) {
+      console.error("Failed to send inquiry via EmailJS", error);
       setState("error");
     }
   }
@@ -47,7 +69,7 @@ function Contact() {
         <div className="space-y-6">
           <h2 className="text-3xl">We're listening.</h2>
           <p className="flex gap-3"><Phone className="h-5 w-5 text-accent" /><span><a href="tel:+254708120806">+254 708 120 806</a><br /><a href="tel:+254733340849">+254 733 340 849</a></span></p>
-          <p className="flex gap-3"><Mail className="h-5 w-5 text-accent" /><a href="mailto:info@mohakinclimbers.org">info@mohakinclimbers.org</a></p>
+          <p className="flex gap-3"><Mail className="h-5 w-5 text-accent" /><a href="mailto:mohakinclimbers@gmail.com">mohakinclimbers@gmail.com</a></p>
           <p className="flex gap-3"><MapPin className="h-5 w-5 text-accent" /><span>Comfort Street, off Laikipia Road<br />Nanyuki, Kenya</span></p>
           <iframe title="Map" className="h-64 w-full rounded-md border border-border" loading="lazy" src="https://www.google.com/maps?q=Laikipia+Road+Nanyuki+Kenya&output=embed" />
         </div>

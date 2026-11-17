@@ -225,7 +225,7 @@ export function Footer() {
           <p>Nanyuki, Kenya</p>
           <p className="mt-3"><a href="tel:+254708120806">+254 708 120 806</a></p>
           <p><a href="tel:+254733340849">+254 733 340 849</a></p>
-          <p><a href="mailto:info@mohakinclimbers.org">info@mohakinclimbers.org</a></p>
+          <p><a href="mailto:mohakinclimbers@gmail.com">mohakinclimbers@gmail.com</a></p>
           <p className="eyebrow mb-3 mt-6">Follow us</p>
           <div className="flex flex-col gap-2">
             <a href="https://www.instagram.com/mohakin_climbers/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-accent"><InstagramGlyph className="h-4 w-4 shrink-0" />@mohakin_climbers</a>
