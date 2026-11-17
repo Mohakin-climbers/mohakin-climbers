@@ -7,10 +7,21 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
-  nitro: { preset: "vercel" },
+  nitro: false,
+  vite: {
+    environments: {
+      client: { build: { outDir: "dist" } },
+      ssr: { build: { outDir: ".tanstack/server" } },
+    },
+  },
   tanstackStart: {
+    prerender: {
+      enabled: true,
+      crawlLinks: true,
+      failOnError: true,
+    },
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-    // nitro/vite builds from this
+    // The prerender build uses this entry.
     server: { entry: "server" },
   },
 });
