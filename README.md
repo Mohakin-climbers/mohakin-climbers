@@ -23,7 +23,7 @@ Set the EmailJS template's recipient to `mohakinclimbers@gmail.com`. The templat
 
 ## Vercel deployment
 
-Import the GitHub repository into Vercel and use `npm run build` as the build command. The Vite configuration selects Nitro's Vercel preset. Add the EmailJS environment variables above in Vercel, then redeploy.
+Import the GitHub repository into Vercel and use `npm run build` as the build command. Nitro's Vercel preset outputs to `.vercel/output`, and `vercel.json` directs Vercel there instead of the default `dist`. Add the EmailJS environment variables above in Vercel, then redeploy.
 
 ## Built with
 
