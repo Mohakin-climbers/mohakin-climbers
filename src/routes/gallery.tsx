@@ -3,7 +3,7 @@ import { gallery, img } from "@/lib/images";
 import { Layout, PageHero, meta } from "@/components/site";
 
 export const Route = createFileRoute("/gallery")({
-  head: () => meta("Gallery — Mohakin Climbers", "Photos from Mount Kenya, Kilimanjaro, Kenyan safaris and Mohakin Foundation programs."),
+  head: () => meta("Gallery — Mohakin Climbers", "Photos from Mount Kenya, Kilimanjaro, Kenyan safaris and Mohakin Foundation programs.", "/gallery"),
   component: Gallery,
 });
 

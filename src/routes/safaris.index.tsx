@@ -4,7 +4,7 @@ import { countries, safaris } from "@/lib/catalog";
 import { Layout, PageHero, SafariCard, meta } from "@/components/site";
 
 export const Route = createFileRoute("/safaris/")({
-  head: () => meta("Kenya & Tanzania Wildlife Safaris — Mohakin Climbers", "Masai Mara, Amboseli, Serengeti and Ngorongoro safaris shaped around East Africa's landscapes, wildlife and people."),
+  head: () => meta("Kenya & Tanzania Wildlife Safaris — Mohakin Climbers", "Masai Mara, Amboseli, Serengeti and Ngorongoro safaris shaped around East Africa's landscapes, wildlife and people.", "/safaris"),
   component: Safaris,
 });
 

@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, ListChecks, SlidersHorizontal } from "lucide-react";
 
 export const Route = createFileRoute("/")({
-  head: () => meta("Mohakin Climbers — Mount Kenya & Kilimanjaro Treks from Nanyuki", "Explore Mount Kenya and Kilimanjaro with East Africa's most experienced guides. Treks, safaris and conservation journeys for over 30 years."),
+  head: () => meta("Mohakin Climbers — Mount Kenya & Kilimanjaro Treks from Nanyuki", "Explore Mount Kenya and Kilimanjaro with East Africa's most experienced guides. Treks, safaris and conservation journeys for over 30 years.", "/"),
   component: Index,
 });
 

@@ -4,7 +4,7 @@ import { Layout, PageHero, meta } from "@/components/site";
 import { reviews } from "@/lib/reviews";
 
 export const Route = createFileRoute("/reviews")({
-  head: () => meta("Reviews — Climbers on Mohakin Climbers", "Read what climbers and explorers from around the world share after experiencing East Africa with Mohakin Climbers."),
+  head: () => meta("Reviews — Climbers on Mohakin Climbers", "Read what climbers and explorers from around the world share after experiencing East Africa with Mohakin Climbers.", "/reviews"),
   component: Reviews,
 });
 

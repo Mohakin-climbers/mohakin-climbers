@@ -10,7 +10,7 @@ export const Route = createFileRoute("/treks/$mountain")({
   },
   head: ({ loaderData }) =>
     loaderData
-      ? meta(`${loaderData.name} Trekking Routes — Mohakin Climbers`, loaderData.intro && loaderData.intro.length <= 160 ? `Every guided ${loaderData.name} adventure with Mohakin Climbers — ${loaderData.intro}` : `Every guided route up ${loaderData.name} with Mohakin Climbers — durations, gates and summit ${loaderData.summit}.`)
+      ? meta(`${loaderData.name} Trekking Routes — Mohakin Climbers`, loaderData.intro && loaderData.intro.length <= 160 ? `Every guided ${loaderData.name} adventure with Mohakin Climbers — ${loaderData.intro}` : `Every guided route up ${loaderData.name} with Mohakin Climbers — durations, gates and summit ${loaderData.summit}.`, `/treks/${loaderData.key}`)
       : { meta: [{ title: "Mountain not found" }, { name: "robots", content: "noindex" }] },
   component: Mountain,
 });

@@ -10,7 +10,7 @@ const interests = ["Mount Kenya trek", "Kilimanjaro expedition", "Rwenzori trek"
 
 export const Route = createFileRoute("/contact")({
   validateSearch: z.object({ interest: z.string().optional(), trip: z.string().optional(), customize: z.boolean().optional() }),
-  head: () => meta("Contact & Book — Mohakin Climbers, Nanyuki", "Plan your Mount Kenya, Kilimanjaro or safari trip. Call +254 708 120 806 or visit us on Comfort Street, Nanyuki, Kenya."),
+  head: () => meta("Contact & Book — Mohakin Climbers, Nanyuki", "Plan your Mount Kenya, Kilimanjaro or safari trip. Call +254 708 120 806 or visit us on Comfort Street, Nanyuki, Kenya.", "/contact"),
   component: Contact,
 });
 

@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
 import { Camera, Clock, Compass, Home, Leaf, ListChecks, Mail, MapPin, Menu, Mountain, PawPrint, SlidersHorizontal, Star, Trees, X } from "lucide-react";
 import { mountains, type Safari, type Trek } from "@/lib/catalog";
+import { canonicalUrl } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/mohakin-photos/mohakin-original-logo.png";
 import logoDark from "@/assets/mohakin-photos/mohakin-dark-logo.png";
@@ -281,7 +282,8 @@ export function CardGrid({ items }: { items: { title: string; meta: string; body
   );
 }
 
-export function meta(title: string, description: string) {
+export function meta(title: string, description: string, pathname: string) {
+  const canonical = canonicalUrl(pathname);
   return {
     meta: [
       { title },
@@ -289,7 +291,9 @@ export function meta(title: string, description: string) {
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: canonical },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: canonical }],
   };
 }

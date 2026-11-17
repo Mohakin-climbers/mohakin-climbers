@@ -4,7 +4,7 @@ import { mountains, treks } from "@/lib/catalog";
 import { Layout, PageHero, TrekCard, meta } from "@/components/site";
 
 export const Route = createFileRoute("/treks/")({
-  head: () => meta("Mount Kenya, Kilimanjaro & Aberdare Treks — Mohakin Climbers", "Guided Mount Kenya traverses, Kilimanjaro expeditions and Aberdare hikes including Mount Satima and Elephant Hill, starting in Nanyuki."),
+  head: () => meta("Mount Kenya, Kilimanjaro & Aberdare Treks — Mohakin Climbers", "Guided Mount Kenya traverses, Kilimanjaro expeditions and Aberdare hikes including Mount Satima and Elephant Hill, starting in Nanyuki.", "/treks"),
   component: Treks,
 });
 

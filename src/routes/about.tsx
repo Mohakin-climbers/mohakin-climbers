@@ -3,7 +3,7 @@ import { img } from "@/lib/images";
 import { CardGrid, Layout, PageHero, meta } from "@/components/site";
 
 export const Route = createFileRoute("/about")({
-  head: () => meta("About Mohakin Climbers — A Legacy Built in the Mountains", "Founded in 1999 in Nanyuki and led by Mohammed Kinyua, Mohakin guides travelers across East Africa's mountains and wild places."),
+  head: () => meta("About Mohakin Climbers — A Legacy Built in the Mountains", "Founded in 1999 in Nanyuki and led by Mohammed Kinyua, Mohakin guides travelers across East Africa's mountains and wild places.", "/about"),
   component: About,
 });
 

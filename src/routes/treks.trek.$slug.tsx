@@ -12,7 +12,7 @@ export const Route = createFileRoute("/treks/trek/$slug")({
   },
   head: ({ loaderData }) =>
     loaderData
-      ? meta(`${loaderData.name} (${loaderData.duration}) — Mohakin Climbers`, `${loaderData.route}. ${loaderData.duration}, guided by Mohakin Climbers.`)
+      ? meta(`${loaderData.name} (${loaderData.duration}) — Mohakin Climbers`, `${loaderData.route}. ${loaderData.duration}, guided by Mohakin Climbers.`, `/treks/trek/${loaderData.slug}`)
       : { meta: [{ title: "Trek not found" }, { name: "robots", content: "noindex" }] },
   component: TrekPage,
 });

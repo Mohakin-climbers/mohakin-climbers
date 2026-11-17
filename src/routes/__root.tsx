@@ -9,6 +9,7 @@ import {
   type ErrorComponentProps,
 } from "@tanstack/react-router";
 import type { ReactNode } from "react";
+import { socialImageUrl } from "@/lib/seo";
 
 import appCss from "../styles.css?url";
 
@@ -77,7 +78,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Mohakin Climbers" },
       { name: "description", content: "Guided Mount Kenya & Kilimanjaro treks and Kenyan safaris from Nanyuki." },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: socialImageUrl },
+      { property: "og:image:alt", content: "Mohakin Climbers on Mount Kenya" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: socialImageUrl },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },

@@ -10,7 +10,7 @@ export const Route = createFileRoute("/safaris/$country")({
   },
   head: ({ loaderData }) =>
     loaderData
-      ? meta(`${loaderData.name} Safaris — Mohakin Climbers`, `Guided wildlife safaris in ${loaderData.name}, tailored by Mohakin Climbers.`)
+      ? meta(`${loaderData.name} Safaris — Mohakin Climbers`, `Guided wildlife safaris in ${loaderData.name}, tailored by Mohakin Climbers.`, `/safaris/${loaderData.key}`)
       : { meta: [{ title: "Country not found" }, { name: "robots", content: "noindex" }] },
   component: Country,
 });

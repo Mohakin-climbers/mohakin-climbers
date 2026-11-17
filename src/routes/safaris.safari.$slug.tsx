@@ -12,7 +12,7 @@ export const Route = createFileRoute("/safaris/safari/$slug")({
   },
   head: ({ loaderData }) =>
     loaderData
-      ? meta(`${loaderData.name} (${loaderData.days} days) — Mohakin Safaris`, `${loaderData.tagline}: a ${loaderData.days}-day safari across ${loaderData.parks} ${loaderData.parks === 1 ? "park" : "parks"} with Mohakin.`)
+      ? meta(`${loaderData.name} (${loaderData.days} days) — Mohakin Safaris`, `${loaderData.tagline}: a ${loaderData.days}-day safari across ${loaderData.parks} ${loaderData.parks === 1 ? "park" : "parks"} with Mohakin.`, `/safaris/safari/${loaderData.slug}`)
       : { meta: [{ title: "Safari not found" }, { name: "robots", content: "noindex" }] },
   component: SafariPage,
 });

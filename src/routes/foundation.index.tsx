@@ -4,7 +4,7 @@ import { programs as catalog } from "@/lib/catalog";
 import { Layout, PageHero, meta } from "@/components/site";
 
 export const Route = createFileRoute("/foundation/")({
-  head: () => meta("Mohakin Foundation — Adventure With Purpose", "Mountain conservation, youth climbing, women in mountaineering and porter welfare programs across East Africa."),
+  head: () => meta("Mohakin Foundation — Adventure With Purpose", "Mountain conservation, youth climbing, women in mountaineering and porter welfare programs across East Africa.", "/foundation"),
   component: Foundation,
 });
 

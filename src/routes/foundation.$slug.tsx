@@ -11,7 +11,7 @@ export const Route = createFileRoute("/foundation/$slug")({
   },
   head: ({ loaderData }) =>
     loaderData
-      ? meta(`${loaderData.name} — Mohakin Foundation`, loaderData.body)
+      ? meta(`${loaderData.name} — Mohakin Foundation`, loaderData.body, `/foundation/${loaderData.slug}`)
       : { meta: [{ title: "Program not found" }, { name: "robots", content: "noindex" }] },
   component: ProgramPage,
 });
