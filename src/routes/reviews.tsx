@@ -1,15 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { img } from "@/lib/images";
 import { Layout, PageHero, meta } from "@/components/site";
+import { reviews } from "@/lib/reviews";
 
 export const Route = createFileRoute("/reviews")({
   head: () => meta("Reviews — Climbers on Mohakin Climbers", "Read what climbers and explorers from around the world share after experiencing East Africa with Mohakin Climbers."),
   component: Reviews,
 });
-
-const reviews = [
-  { name: "jorammanoah1", date: "10/5/2026", trek: "Sirimon – Chogoria Traverse", text: "This was an amazing journey for me, pretty life changing. It made me discover that my life itself is a mountain. Thank you Mohakin, looking forward to many more summits!!" },
-];
 
 function Reviews() {
   return (

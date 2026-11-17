@@ -3,6 +3,7 @@ import { img } from "@/lib/images";
 import { Layout, meta } from "@/components/site";
 import { HomeSlideshow } from "@/components/home-slideshow";
 import { WhatsAppButton } from "@/components/whatsapp-button";
+import { ReviewMarquee } from "@/components/review-marquee";
 import { safaris, treks } from "@/lib/catalog";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ListChecks, SlidersHorizontal } from "lucide-react";
@@ -127,6 +128,8 @@ function Index() {
           </div>
         </div>
       </section>
+
+      <ReviewMarquee />
 
       <section className="mx-auto max-w-6xl px-6 py-24 text-center">
         <h2 className="text-4xl">Every Adventure Creates Impact</h2>
