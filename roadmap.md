@@ -1,0 +1,18 @@
+# Roadmap
+- [x] Add “Your next great story” with one mountain trek and one wildlife safari
+- [x] Remove the extra Lake Ellis photo section from the home page
+- [x] Replace website logo and favicon with the original mohakinclimbers.org logo
+- [x] Verify the latest uploaded trail-break photo in the Gallery
+- [x] Inquiry form saves to database
+- [x] Separate pages for every trek, safari, mountain, country, foundation program
+- [x] Icons for every page in top menu (+ mobile)
+- [x] Home page icon grid linking to every page
+- [x] Include all expeditions & safaris from mohakinclimbers.org
+- [x] Make site look better / more enticing
+- [x] Add authentic uploaded photos to the gallery and brighten website presentation
+- [x] Restore full original day-by-day itineraries on every trek and safari page
+- [x] Itinerary + Customize buttons on every trek and safari
+- [x] Add Ol Pejeta Conservancy Safari (3 days) with its full day-by-day itinerary
+- [x] Add Aberdare adventures: Mount Satima & Table Mountain (2 days) and Elephant Hill day hike
+- [x] Add Ngare Ndare Forest Adventure (1 day) with its full day-by-day itinerary
+- [ ] Owner email alerts to mohakinclimbers@gmail.com (waiting on setup and verification of an owned sender domain)
