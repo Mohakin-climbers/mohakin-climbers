@@ -230,7 +230,7 @@ export function Footer() {
           <p className="eyebrow mb-3 mt-6">Follow us</p>
           <div className="flex flex-col gap-2">
             <a href="https://www.instagram.com/mohakin_climbers/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-accent"><InstagramGlyph className="h-4 w-4 shrink-0" />@mohakin_climbers</a>
-            <a href="https://www.facebook.com/mohakin climbers" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-accent"><FacebookGlyph className="h-4 w-4 shrink-0" />Mohakin Climbers</a>
+            <a href="https://www.facebook.com/Mohakin Climbers" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-accent"><FacebookGlyph className="h-4 w-4 shrink-0" />Mohakin Climbers</a>
           </div>
         </div>
         <div className="flex flex-col gap-2 text-sm opacity-85">
